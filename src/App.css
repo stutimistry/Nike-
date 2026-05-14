@@ -1,0 +1,157 @@
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-panel,
+.wishlist-panel {
+  position: fixed;
+  right: 0;
+  top: 70px;
+  width: 400px;
+  height: calc(100vh - 70px);
+  background: white;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  overflow-y: auto;
+  animation: slideIn 0.3s ease-in-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.cart-header,
+.wishlist-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.cart-header h2,
+.wishlist-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.cart-header button,
+.wishlist-header button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.cart-items,
+.wishlist-items {
+  padding: 20px;
+}
+
+.cart-item,
+.wishlist-item {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.cart-item img,
+.wishlist-item img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.item-details {
+  flex: 1;
+}
+
+.item-details h4 {
+  margin: 0 0 5px 0;
+  font-size: 0.9rem;
+}
+
+.item-details p {
+  margin: 0 0 10px 0;
+  color: #ff6b6b;
+  font-weight: bold;
+}
+
+.quantity-control {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.quantity-control button,
+.quantity-control input {
+  padding: 5px 10px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.quantity-control input {
+  width: 40px;
+  text-align: center;
+}
+
+.remove-btn {
+  background: #ff6b6b;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+.cart-total,
+.checkout-btn {
+  padding: 20px;
+  border-top: 2px solid #eee;
+}
+
+.cart-total h3 {
+  margin: 0 0 15px 0;
+  font-size: 1.2rem;
+}
+
+.checkout-btn {
+  width: 100%;
+  padding: 15px;
+  background: #000;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.checkout-btn:hover {
+  background: #333;
+}
+
+.empty-message {
+  text-align: center;
+  padding: 40px 20px;
+  color: #999;
+}
+
+@media (max-width: 768px) {
+  .cart-panel,
+  .wishlist-panel {
+    width: 100%;
+  }
+}
